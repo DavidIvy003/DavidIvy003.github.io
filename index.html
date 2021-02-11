@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Provider List Demo</title>
+</head>
+
+<body>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div><a href="./providerList.html">< Back to Provider List</a></div>
+      <h1>Provider Name 1</h1>
+    </div>
+  </div>
+  <div class="row  mt-4">
+    <div class="col-lg-6">
+      <h4>Contact Info</h4>
+      <div>Phone: (984) 321-1237</div>
+    </div>
+
+    <div class="col-lg-6 form-wrapper">
+      <form id="contact-form">
+        <h4>Contact Form</h4>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone:</label>
+          <input type="text" name="phoneNumber" id="phoneNumber" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" name="address" id="address" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="is_new1">Patient Type:</label>
+          <select name="is_new" id="is_new" class="form-control">
+            <option value="true">New</option>
+            <option value="false">Existing</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="division">Division:</label>
+          <select name="division" id="division" class="form-control">
+            <option value="Laser & Light Treatments">Laser & Light Treatments</option>
+            <option value="Body Contouring">Body Contouring</option>
+            <option value="Skin Rejuvenation">Skin Rejuvenation</option>
+            <option value="Botox & Filler">Botox & Filler</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <input type="text" id="message" class="form-control" />
+        </div>
+
+        <input type="submit">
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <script defer src='https://analytics.liine.com/v1/analytics.stage.js'></script>
+
+  <script>
+    window.__liine_queue = window.__liine_queue || [];
+    window.__liine_queue.push(function () {
+      Liine.init('be6d2b60c69e4fcfa798d56532992cda', { fetchOnLoad: false });
+    });
+  </script>
+
+  <script>
+    window.__liine_queue = window.__liine_queue || [];
+    window.__liine_queue.push(function () {
+      Liine.swapNumbers(['aa129a18f23d4516ac34d36e5ae6a036']);  // Customer 1 Id
+      Liine.form(
+        '9a30f8da-da60-4d0d-8c99-3eeb97637ea0', // Form Id
+        '#contact-form', // form element selector
+        {
+          'name': '[name=name]',
+          'phone': '[name=phoneNumber]',
+          'email': '[name=email]',
+          'division': '[name=division]',
+          'is_new': '[name=is_new]',
+        },   // Input Selectors
+        {
+          message: '[name=message]',
+        }, // Custom Fields (if any)
+        {
+        });
+    })
+  </script>
+</body>
+
+</html>
